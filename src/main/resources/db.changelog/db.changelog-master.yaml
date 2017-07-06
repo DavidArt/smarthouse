@@ -4,7 +4,7 @@ databaseChangeLog:
       author: david
       changes:
         - createTable:
-            tableName: company
+            tableName: room
             columns:
               - column:
                   name: id
@@ -19,22 +19,31 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: address
-                  type: varchar(45)
+                  name: temperature
+                  type: integer
                   constraints:
                     nullable: false
               - column:
-                  name: owner_id
+                  name: lightOn
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: windowsClosed
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: house_id
                   type: bigint
                   constraints:
                     nullable: false
-
   - changeSet:
       id: 2
       author: david
       changes:
         - createTable:
-            tableName: review
+            tableName: house
             columns:
               - column:
                   name: id
@@ -44,18 +53,23 @@ databaseChangeLog:
                     primaryKey: true
                     nullable: false
               - column:
-                  name: reviewContent
-                  type: varchar(45)
+                  name: address
+                  type: varchar(200)
                   constraints:
                     nullable: false
               - column:
-                  name: company_id
-                  type: bigint
+                  name: temperature
+                  type: integer
                   constraints:
                     nullable: false
               - column:
-                  name: user_id
-                  type: bigint
+                  name: light_on
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: windows_closed
+                  type: boolean
                   constraints:
                     nullable: false
   - changeSet:
